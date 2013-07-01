@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arguments.cs" />
     <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="MailMessageExtensions.cs" />
     <Compile Include="Properties\AssemblyVersion.cs" />

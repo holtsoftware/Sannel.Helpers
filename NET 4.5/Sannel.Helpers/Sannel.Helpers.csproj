@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\Arguments.cs">
+      <Link>Arguments.cs</Link>
+    </Compile>
     <Compile Include="..\..\NET 4.0\Sannel.Helpers\AssemblyExtensions.cs">
       <Link>AssemblyExtensions.cs</Link>
     </Compile>
@@ -65,6 +68,9 @@
     </Compile>
     <Compile Include="..\..\NET 4.0\Sannel.Helpers\GlobalSuppressions.cs">
       <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\MailMessageExtensions.cs">
+      <Link>MailMessageExtensions.cs</Link>
     </Compile>
     <Compile Include="..\..\NET 4.0\Sannel.Helpers\Properties\AssemblyVersion.cs">
       <Link>Properties\AssemblyVersion.cs</Link>
