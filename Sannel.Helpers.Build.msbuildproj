@@ -10,12 +10,13 @@
 	<Target Name="Build">
 		<RemoveDir Directories="$(BuildDir)" />
 		<MakeDir Directories="$(BuildDir)" />
-		<CallTarget Targets="BuildNET4;BuildNET4_5;Build_Web_Optimization;BuildPortable;BuildWinRT;BuildWP7;BuildWP8;CreateZip" />
+		<CallTarget Targets="BuildNET4;BuildNET4_5;BuildNET4_5_1;Build_Web_Optimization;BuildPortable;BuildWinRT;BuildWP7;BuildWP8;CreateZip" />
 	</Target>
 
 	<Target Name="CreateZip">
+		<Copy SourceFiles="License.txt" DestinationFolder="$(BuildDir)" />
 		<ItemGroup>
-			<ZipFiles Include="$(BuildDir)\**\*.dll;$(BuildDir)\**\*.xml" Exclude="$(BuildDir)\**\*Test*.*" />
+			<ZipFiles Include="$(BuildDir)\**\*.dll;$(BuildDir)\**\*.xml" Exclude="$(BuildDir)\**\*Test*.*;$(BuildDir)\Sannel.Helpers.Web.Optimization\**\*.*" />
 		</ItemGroup>
 
 		<Zip Files="@(ZipFiles)"
