@@ -71,7 +71,7 @@
     <None Include="Properties\Sannel.TestHelpers.snk" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\NET 4.0\Sannel.TestHelpers\License.txt">
+    <EmbeddedResource Include="..\..\License.txt">
       <Link>License.txt</Link>
     </EmbeddedResource>
   </ItemGroup>

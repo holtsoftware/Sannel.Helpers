@@ -94,10 +94,12 @@
     <None Include="Properties\Sannel.Helpers.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\NET 4.0\Sannel.Helpers\License.txt">
-      <Link>License.txt</Link>
-    </Content>
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\License.txt">
+      <Link>License.txt</Link>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
