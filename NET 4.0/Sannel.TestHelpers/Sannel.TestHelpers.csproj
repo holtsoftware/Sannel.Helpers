@@ -66,7 +66,9 @@
     <None Include="Properties\Sannel.TestHelpers.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="License.txt" />
+    <EmbeddedResource Include="..\..\License.txt">
+      <Link>License.txt</Link>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

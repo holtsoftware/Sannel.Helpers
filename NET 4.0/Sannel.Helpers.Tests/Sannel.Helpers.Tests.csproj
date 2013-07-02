@@ -55,6 +55,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ArgumentsTests.cs" />
     <Compile Include="AssemblyExtensionTests.cs" />
     <Compile Include="Collections\Generic\MatrixTests.cs" />
     <Compile Include="ComponentModel\NotifyPropertyChangedBaseTests.cs" />

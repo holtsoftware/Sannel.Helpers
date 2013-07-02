@@ -144,12 +144,14 @@
     <Compile Include="StorageFolderExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\NET 4.0\Sannel.Helpers\License.txt">
-      <Link>License.txt</Link>
-    </EmbeddedResource>
     <CodeAnalysisDictionary Include="CustomDictionary.xml">
       <SubType>Designer</SubType>
     </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\License.txt">
+      <Link>License.txt</Link>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

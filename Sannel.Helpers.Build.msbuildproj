@@ -60,6 +60,25 @@
 		<Exec Command="&quot;$(MSTest)&quot; /testcontainer:&quot;$(OutputDir)\Sannel.Helpers.Tests.dll&quot; /testContainer:&quot;$(OutputDir)\Sannel.TestHelpers.Tests.dll&quot;" />
 
 	</Target>
+	
+	<Target Name="BuildNET4_5_1">
+		<PropertyGroup>
+			<Dir>NET 4.5.1</Dir>
+			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
+		</PropertyGroup>
+
+		<RemoveDir Directories="$(OutputDir)" />
+
+		<MakeDir Directories="$(OutputDir)" />
+
+		<MSBuild Projects="$(Dir)\Sannel.Helpers\Sannel.Helpers.csproj;" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir);DocumentationFile=..\..\$(OutputDir)\Sannel.Helpers.xml" />
+
+		<MSBuild Projects="$(Dir)\Sannel.Helpers.Tests\Sannel.Helpers.Tests.csproj;$(Dir)\Sannel.TestHelpers.Tests\Sannel.TestHelpers.Tests.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)" />
+
+		<Exec Command="&quot;$(MSTest)&quot; /testcontainer:&quot;$(OutputDir)\Sannel.Helpers.Tests.dll&quot; /testContainer:&quot;$(OutputDir)\Sannel.TestHelpers.Tests.dll&quot;" />
+
+	</Target>
 
 	<Target Name="Build_Web_Optimization">
 		<PropertyGroup>

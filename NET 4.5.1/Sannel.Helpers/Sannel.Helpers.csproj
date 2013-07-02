@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1989158C-3BB7-4AE6-98B0-EFF691B743B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sannel.Helpers</RootNamespace>
+    <AssemblyName>Sannel.Helpers</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;CODE_ANALYSIS;NET_4_5_1</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Sannel.Helpers.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET_4_5_1</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\Sannel.Helpers.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\Arguments.cs">
+      <Link>Arguments.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\AssemblyExtensions.cs">
+      <Link>AssemblyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\Collections\Generic\IMatrix.cs">
+      <Link>Collections\Generic\IMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\Collections\Generic\Matrix.cs">
+      <Link>Collections\Generic\Matrix.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\Collections\Generic\MatrixException.cs">
+      <Link>Collections\Generic\MatrixException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\ComponentModel\NotifyPropertyChangedBase.cs">
+      <Link>ComponentModel\NotifyPropertyChangedBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\GlobalSuppressions.cs">
+      <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\MailMessageExtensions.cs">
+      <Link>MailMessageExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\Properties\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\RandomExtensions.cs">
+      <Link>RandomExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\StringExtensions.cs">
+      <Link>StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\XDocumentExtensions.cs">
+      <Link>XDocumentExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NET 4.0\Sannel.Helpers\XElementExtensions.cs">
+      <Link>XElementExtensions.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Sannel.Helpers.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\NET 4.0\Sannel.Helpers\License.txt">
+      <Link>License.txt</Link>
+    </Content>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

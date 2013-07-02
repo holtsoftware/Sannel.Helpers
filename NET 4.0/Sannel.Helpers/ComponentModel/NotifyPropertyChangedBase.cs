@@ -1,4 +1,5 @@
-﻿using System;
+﻿/* This class is based off of the NotificatinoPropertyChange class included in the Windows Store template */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Sannel.ComponentModel
 		/// desired value.</returns>
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", MessageId = "0#")]
 		protected virtual bool SetProperty<T>(ref T storage, T value,
-#if NETFX_CORE || WP8 || NET_4_5
+#if NETFX_CORE || WP8 || NET_4_5 || NET_4_5_1
 			[CallerMemberName] String propertyName = null
 #else
 			String propertyName
