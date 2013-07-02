@@ -16,7 +16,7 @@
 	<Target Name="CreateZip">
 		<Copy SourceFiles="License.txt" DestinationFolder="$(BuildDir)" />
 		<ItemGroup>
-			<ZipFiles Include="$(BuildDir)\**\*.dll;$(BuildDir)\**\*.xml" Exclude="$(BuildDir)\**\*Test*.*;$(BuildDir)\Sannel.Helpers.Web.Optimization\**\*.*" />
+			<ZipFiles Include="$(BuildDir)\**\*.dll;$(BuildDir)\**\*.xml;$(BuildDir)\*.txt" Exclude="$(BuildDir)\**\*Test*.*;$(BuildDir)\Sannel.Helpers.Web.Optimization\**\*.*" />
 		</ItemGroup>
 
 		<Zip Files="@(ZipFiles)"
