@@ -15,6 +15,7 @@ limitations under the License.
 */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,9 +39,20 @@ namespace Sannel.Web.Optimization
 
 			foreach (var file in response.Files)
 			{
-				if(file.Exists)
+				var filePath = context.HttpContext.Server.MapPath(file.IncludedVirtualPath);
+				if (!File.Exists(filePath))
 				{
-					builder.Append(System.IO.File.ReadAllText(file.FullName));
+					using (var stream = new StreamReader(file.VirtualFile.Open()))
+					{
+						builder.Append(stream.ReadToEnd());
+					}
+				}
+				else
+				{
+					using (var stream = new StreamReader(filePath))
+					{
+						builder.Append(stream.ReadToEnd());
+					}
 				}
 			}
 

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Sannel.Helpers.Web.Optimization</id>
+        <version>1.3.0</version>
+        <title />
+        <authors>adam.holt</authors>
+        <owners />
+        <licenseUrl>https://sannelhelpers.codeplex.com/license</licenseUrl>
+        <projectUrl>https://sannelhelpers.codeplex.com</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>The idea behind these helpers is that you have a site that uses media quires. You need to also support IE8 and below. But want to use the styles that are defined in your media quires in IE8 also. It is written on top of the asp.net 4.5 Web Optimization framework provided by Microsoft.</description>
+       <dependencies>
+			<dependency id="Microsoft.Web.Infrastructure" />
+			<dependency id="Microsoft.AspNet.Web.Optimization" version="1.0.0" />
+		</dependencies>
+    </metadata>
+    <files>
+		<file src="..\Build\Sannel.Helpers.Web.Optimization\Sannel.Helpers.Web.Optimization.dll" target="lib\net45\Sannel.Helpers.Web.Optimization.dll" />
+		<file src="..\NET 4.5\Sannel.Helpers.Web.Optimization\Web.config.transform" target="content\Web.config.transform" />
+	</files>
+</package>

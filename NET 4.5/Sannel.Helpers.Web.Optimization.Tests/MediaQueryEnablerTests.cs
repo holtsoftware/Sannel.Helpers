@@ -20,6 +20,7 @@ using System.Web.Optimization;
 using System.IO;
 using Sannel.Helpers;
 using System.Collections.Generic;
+using System.Web.Hosting;
 
 namespace Sannel.Helpers.Web.Optimization.Tests
 {
@@ -35,9 +36,9 @@ namespace Sannel.Helpers.Web.Optimization.Tests
 			var exception = AssertHelpers.ThrowsException<ArgumentNullException>(() => { actualObject.Process(null, null); });
 			Assert.AreEqual("response", exception.ParamName);
 
-			List<FileInfo> files = new List<FileInfo>();
-			FileInfo testFile = new FileInfo("Test.css");
-			using (var stream = new StreamWriter(testFile.OpenWrite()))
+			List<BundleFile> files = new List<BundleFile>();
+			BundleFile testFile = new BundleFile("~/File1.css", new TestVirtualFile("~/File1.css"));
+			using (var stream = new StreamWriter(File.OpenWrite("File1.css")))
 			{
 				stream.Write(MediaQueryEnablerHandlerTests.FILECONTENTS);
 				stream.Flush();
@@ -46,7 +47,9 @@ namespace Sannel.Helpers.Web.Optimization.Tests
 			files.Add(testFile);
 
 			BundleResponse resp = new BundleResponse("", files);
-			actualObject.Process(null, resp);
+			BundleCollection collection = new BundleCollection();
+			BundleContext context = new BundleContext(new TestHttpContext(), collection, "~/Cheese");
+			actualObject.Process(context, resp);
 
 			Assert.AreEqual(expected, resp.Content);
 		}

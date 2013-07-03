@@ -30,7 +30,7 @@ namespace Sannel.Helpers.Web.Optimization.Tests
 			String fixedPath = "";
 			if (path.IndexOf("~/") == 0)
 			{
-				fixedPath = path.Replace("~/", Environment.CurrentDirectory);
+				fixedPath = path.Replace("~/", Environment.CurrentDirectory + "/");
 			}
 			else if (path.IndexOf('/') == 0)
 			{
