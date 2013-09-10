@@ -37,6 +37,6 @@ using System;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("4D1BFC83-B92E-4802-A4C9-A400C2EC148A")]
 
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
 
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

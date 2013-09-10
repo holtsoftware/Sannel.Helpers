@@ -28,7 +28,7 @@ namespace Sannel.Helpers
 	public static class StringExtensions
 	{
 		/// <summary>
-		/// Try's to convert the string into a guid or returns null if it cannot
+		/// Try's to convert the given string to a Guid. If it cannot returns null.
 		/// </summary>
 		/// <param name="source"></param>
 		/// <returns></returns>
@@ -52,7 +52,7 @@ namespace Sannel.Helpers
 		}
 
 		/// <summary>
-		/// Try's to convert the string into a guid if it cannot returns <paramref name="defaultValue"/> 
+		/// Try's to convert the given string to a Guid. If it cannot returns <paramref name="defaultValue"/>.
 		/// </summary>
 		/// <param name="source">The source string to use</param>
 		/// <param name="defaultValue">The default value if the string cannot be converted</param>
@@ -75,7 +75,7 @@ namespace Sannel.Helpers
 		}
 
 		/// <summary>
-		/// Try's to convert the string into a guid if it cannot returns default(Guid)
+		/// Try's to convert the given string to a Guid. If it cannot returns default(Guid).
 		/// </summary>
 		/// <param name="source">The source string to use</param>
 		/// <returns></returns>
@@ -148,7 +148,7 @@ namespace Sannel.Helpers
 		}
 
 		/// <summary>
-		/// Try's to convert the string single a Single or returns null if it cannot
+		/// Try's to convert the string single as Single or returns null if it cannot
 		/// </summary>
 		/// <param name="source">The value.</param>
 		/// <returns></returns>
@@ -169,7 +169,7 @@ namespace Sannel.Helpers
 		}
 
 		/// <summary>
-		/// Try's to convert the string double a Double or returns null if it cannot
+		/// Try's to convert the string double as Double or returns null if it cannot
 		/// </summary>
 		/// <param name="source">The value.</param>
 		/// <returns></returns>
@@ -190,7 +190,7 @@ namespace Sannel.Helpers
 		}
 
 		/// <summary>
-		/// Try's to convert the string decimal a Decimal or returns null if it cannot
+		/// Try's to convert the string decimal as Decimal or returns null if it cannot
 		/// </summary>
 		/// <param name="source">The value.</param>
 		/// <returns></returns>
@@ -400,6 +400,162 @@ namespace Sannel.Helpers
 		public static Decimal ToDecimalOrDefault(this String source)
 		{
 			return ToDecimalOrDefault(source, default(Decimal));
+		}
+
+		/// <summary>
+		/// Tries to convert the source to a UInt16. If it cannot null is returned.
+		/// </summary>
+		/// <param name="source">The string to convert</param>
+		/// <returns></returns>
+		public static UInt16? ToUInt16(this String source)
+		{
+			if (source == null)
+			{
+				return null;
+			}
+
+			UInt16 i;
+			if (UInt16.TryParse(source, out i))
+			{
+				return i;
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// Tries to convert the source string to a UInt16. If it cannot <paramref name="defaultValue"/> is returned.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt16 ToUInt16OrDefault(this String source, UInt16 defaultValue)
+		{
+			if (source == null)
+			{
+				return defaultValue;
+			}
+
+			UInt16 i;
+			if (UInt16.TryParse(source, out i))
+			{
+				return i;
+			}
+			return defaultValue;
+		}
+
+		/// <summary>
+		/// Tries to convert the source string to a UInt16. If it cannot default(UInt16) is returned.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <returns></returns>
+		public static UInt16 ToUInt16OrDefault(this String source)
+		{
+			return ToUInt16OrDefault(source, default(UInt16));
+		}
+
+		/// <summary>
+		/// Tries to convert the source to a UInt32. If it cannot null is returned.
+		/// </summary>
+		/// <param name="source">The string to convert</param>
+		/// <returns></returns>
+		public static UInt32? ToUInt32(this String source)
+		{
+			if (source == null)
+			{
+				return null;
+			}
+
+			UInt32 i;
+			if (UInt32.TryParse(source, out i))
+			{
+				return i;
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// Tries to convert the source string to a UInt32. If it cannot <paramref name="defaultValue"/> is returned.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt32 ToUInt32OrDefault(this String source, UInt32 defaultValue)
+		{
+			if (source == null)
+			{
+				return defaultValue;
+			}
+
+			UInt32 i;
+			if (UInt32.TryParse(source, out i))
+			{
+				return i;
+			}
+			return defaultValue;
+		}
+
+		/// <summary>
+		/// Tries to convert the source string to a UInt32. If it cannot default(UInt32) is returned.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <returns></returns>
+		public static UInt32 ToUInt32OrDefault(this String source)
+		{
+			return ToUInt32OrDefault(source, default(UInt32));
+		}
+
+		/// <summary>
+		/// Tries to convert the source to a UInt64. If it cannot null is returned.
+		/// </summary>
+		/// <param name="source">The string to convert</param>
+		/// <returns></returns>
+		public static UInt64? ToUInt64(this String source)
+		{
+			if (source == null)
+			{
+				return null;
+			}
+
+			UInt64 i;
+			if (UInt64.TryParse(source, out i))
+			{
+				return i;
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// Tries to convert the source string to a UInt64. If it cannot <paramref name="defaultValue"/> is returned.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt64 ToUInt64OrDefault(this String source, UInt64 defaultValue)
+		{
+			if (source == null)
+			{
+				return defaultValue;
+			}
+
+			UInt64 i;
+			if (UInt64.TryParse(source, out i))
+			{
+				return i;
+			}
+			return defaultValue;
+		}
+
+		/// <summary>
+		/// Tries to convert the source string to a UInt64. If it cannot default(UInt64) is returned.
+		/// </summary>
+		/// <param name="source"></param>
+		/// <returns></returns>
+		public static UInt64 ToUInt64OrDefault(this String source)
+		{
+			return ToUInt64OrDefault(source, default(UInt64));
 		}
 
 		/// <summary>

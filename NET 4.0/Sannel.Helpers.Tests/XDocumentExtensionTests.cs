@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-#if NETFX_CORE
+#if NETFX_CORE || WP8
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using Windows.Storage;
 using System.Xml.Linq;
@@ -39,7 +39,7 @@ namespace Sannel.Helpers.Tests
 	[TestClass]
 	public class XDocumentExtensionTests
 	{
-#if NETFX_CORE
+#if NETFX_CORE || WP8
 		[TestMethod]
 		public async Task SaveAsyncTest()
 		{

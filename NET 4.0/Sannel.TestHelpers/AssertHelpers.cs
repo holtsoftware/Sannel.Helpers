@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-#if NETFX_CORE
+#if NETFX_CORE || WP8
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -22,6 +22,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+#if NET_4_5 || NET_4_5_1
+using System.Threading.Tasks;
+#endif
 
 #if NETFX_CORE
 namespace Sannel.Helpers.WinRT.Tests

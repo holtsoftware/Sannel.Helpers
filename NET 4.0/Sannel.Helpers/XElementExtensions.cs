@@ -311,12 +311,12 @@ namespace Sannel.Helpers
 		}
 
 		/// <summary>
-		/// Returns the string value of the sub element with nane <paramref name="subElementName"/> or null if element is null or sub element is not found
+		/// Returns the string value of the sub element with name <paramref name="subElementName"/> or null if element is null or sub element is not found
 		/// </summary>
 		/// <param name="element">The parent element</param>
 		/// <param name="subElementName">The name of the sub element</param>
 		/// <returns>The value or null</returns>
-		public static String GetElementValue(this XContainer element, String subElementName)
+		public static String GetElementValue(this XContainer element, XName subElementName)
 		{
 			if (subElementName == null)
 			{
@@ -659,6 +659,204 @@ namespace Sannel.Helpers
 
 			return GetElementValueAsGuidOrDefault(element, elementName, default(Guid));
 		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and Tries to convert it to UInt16. If the <paramref name="element"/> has no value or the value cannot be converted returns null.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <returns></returns>
+		public static UInt16? GetElementValueAsUInt16(this XElement element)
+		{
+			return GetElementValue(element).ToUInt16();
+		}
+
+		/// <summary>
+		/// Finds the child XElement who's name equals <paramref name="name"/> and converts its value to a UInt16. If any of these conditions are true returns null: <paramref name="element"/> equals null, there is no child node with name, the value of the child name cannot be converted to a UInt16.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt16? GetElementValueAsUInt16(this XContainer element, XName name)
+		{
+			return GetElementValue(element, name).ToUInt16();
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and converts it to a UInt16. If <paramref name="element"/> is null or its value cannot be converted <paramref name="defaultValue"/> is returned.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt16 GetElementValueAsUInt16OrDefault(this XElement element, UInt16 defaultValue)
+		{
+			return GetElementValue(element).ToUInt16OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and converts it to a UInt16. If <paramref name="element"/> is null or its value cannot be converted default(UInt16) is returned.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <returns></returns>
+		public static UInt16 GetElementValueAsUInt16OrDefault(this XElement element)
+		{
+			return GetElementValue(element).ToUInt16OrDefault();
+		}
+
+		/// <summary>
+		/// Finds the child of <paramref name="element"/> that has the name equal to <paramref name="name"/> and returns its value as a UInt16. 
+		/// If any of the following conditions are true returns defaultValue: <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child element cannot be converted to UInt16.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt16 GetElementValueAsUInt16OrDefault(this XContainer element, XName name, UInt16 defaultValue)
+		{
+			return GetElementValue(element, name).ToUInt16OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Finds the child of <paramref name="element"/> that has the name equal to <paramref name="name"/> and returns its value as a UInt16. If any of the following conditions are true returns default(UInt16): <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child element cannot be converted to UInt16.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt16 GetElementValueAsUInt16OrDefault(this XContainer element, XName name)
+		{
+			return GetElementValue(element, name).ToUInt16OrDefault();
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and Tries to convert it to UInt32. If the <paramref name="element"/> has no value or the value cannot be converted returns null.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <returns></returns>
+		public static UInt32? GetElementValueAsUInt32(this XElement element)
+		{
+			return GetElementValue(element).ToUInt32();
+		}
+
+		/// <summary>
+		/// Finds the child XElement who's name equals <paramref name="name"/> and converts its value to a UInt32. If any of these conditions are true returns null: <paramref name="element"/> equals null, there is no child node with name, the value of the child name cannot be converted to a UInt32.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt32? GetElementValueAsUInt32(this XContainer element, XName name)
+		{
+			return GetElementValue(element, name).ToUInt32();
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and converts it to a UInt32. If <paramref name="element"/> is null or its value cannot be converted <paramref name="defaultValue"/> is returned.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt32 GetElementValueAsUInt32OrDefault(this XElement element, UInt32 defaultValue)
+		{
+			return GetElementValue(element).ToUInt32OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and converts it to a UInt32. If <paramref name="element"/> is null or its value cannot be converted default(UInt32) is returned.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <returns></returns>
+		public static UInt32 GetElementValueAsUInt32OrDefault(this XElement element)
+		{
+			return GetElementValue(element).ToUInt32OrDefault();
+		}
+
+		/// <summary>
+		/// Finds the child of <paramref name="element"/> that has the name equal to <paramref name="name"/> and returns its value as a UInt32. 
+		/// If any of the following conditions are true returns defaultValue: <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child element cannot be converted to UInt32.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt32 GetElementValueAsUInt32OrDefault(this XContainer element, XName name, UInt32 defaultValue)
+		{
+			return GetElementValue(element, name).ToUInt32OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Finds the child of <paramref name="element"/> that has the name equal to <paramref name="name"/> and returns its value as a UInt32. If any of the following conditions are true returns default(UInt32): <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child element cannot be converted to UInt32.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt32 GetElementValueAsUInt32OrDefault(this XContainer element, XName name)
+		{
+			return GetElementValue(element, name).ToUInt32OrDefault();
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and Tries to convert it to UInt64. If the <paramref name="element"/> has no value or the value cannot be converted returns null.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <returns></returns>
+		public static UInt64? GetElementValueAsUInt64(this XElement element)
+		{
+			return GetElementValue(element).ToUInt64();
+		}
+
+		/// <summary>
+		/// Finds the child XElement who's name equals <paramref name="name"/> and converts its value to a UInt64. If any of these conditions are true returns null: <paramref name="element"/> equals null, there is no child node with name, the value of the child name cannot be converted to a UInt64.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt64? GetElementValueAsUInt64(this XContainer element, XName name)
+		{
+			return GetElementValue(element, name).ToUInt64();
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and converts it to a UInt64. If <paramref name="element"/> is null or its value cannot be converted <paramref name="defaultValue"/> is returned.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt64 GetElementValueAsUInt64OrDefault(this XElement element, UInt64 defaultValue)
+		{
+			return GetElementValue(element).ToUInt64OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Gets the value of <paramref name="element"/> and converts it to a UInt64. If <paramref name="element"/> is null or its value cannot be converted default(UInt64) is returned.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <returns></returns>
+		public static UInt64 GetElementValueAsUInt64OrDefault(this XElement element)
+		{
+			return GetElementValue(element).ToUInt64OrDefault();
+		}
+
+		/// <summary>
+		/// Finds the child of <paramref name="element"/> that has the name equal to <paramref name="name"/> and returns its value as a UInt64. 
+		/// If any of the following conditions are true returns defaultValue: <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child element cannot be converted to UInt64.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt64 GetElementValueAsUInt64OrDefault(this XContainer element, XName name, UInt64 defaultValue)
+		{
+			return GetElementValue(element, name).ToUInt64OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Finds the child of <paramref name="element"/> that has the name equal to <paramref name="name"/> and returns its value as a UInt64. If any of the following conditions are true returns default(UInt64): <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child element cannot be converted to UInt64.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt64 GetElementValueAsUInt64OrDefault(this XContainer element, XName name)
+		{
+			return GetElementValue(element, name).ToUInt64OrDefault();
+		}
 		#endregion
 
 		#region Attribute Value
@@ -670,7 +868,7 @@ namespace Sannel.Helpers
 		/// <param name="element">The node that contains the attribute</param>
 		/// <param name="attributeName">The name of the attribute</param>
 		/// <returns></returns>
-		public static String GetAttributeValue(this XElement element, String attributeName)
+		public static String GetAttributeValue(this XElement element, XName attributeName)
 		{
 			if (attributeName == null)
 			{
@@ -681,7 +879,7 @@ namespace Sannel.Helpers
 			{
 				return null;
 			}
-
+			
 			var attribute = element.Attribute(attributeName);
 			if (attribute != null)
 			{
@@ -1018,7 +1216,109 @@ namespace Sannel.Helpers
 
 			return GetAttributeValueAsGuidOrDefault(element, attributeName, default(Guid));
 		}
+		
+		/// <summary>
+		/// Finds the attribute who's name equals <paramref name="name"/> and converts its value to a UInt16. If any of these conditions are true returns null: <paramref name="element"/> equals null, there is no child node with <paramref name="name"/>, the value of the attribute cannot be converted to a UInt16.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt16? GetAttributeValueAsUInt16(this XElement element, XName name)
+		{
+			return GetAttributeValue(element, name).ToUInt16();
+		}
 
+		/// <summary>
+		/// Finds the attribute that has the name equal to <paramref name="name"/> and returns its value as a UInt16. If any of the following conditions are true returns <paramref name="defaultValue"/>: <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child attribute cannot be converted to UInt16.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt16 GetAttributeValueAsUInt16OrDefault(this XElement element, XName name, UInt16 defaultValue)
+		{
+			return GetAttributeValue(element, name).ToUInt16OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Finds the attribute that has the name equal to <paramref name="name"/> and returns its value as a UInt16. If any of the following conditions are true returns default(UInt16): <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child attribute cannot be converted to UInt16.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt16 GetAttributeValueAsUInt16OrDefault(this XElement element, XName name)
+		{
+			return GetAttributeValue(element, name).ToUInt16OrDefault();
+		}
+
+		/// <summary>
+		/// Finds the attribute who's name equals <paramref name="name"/> and converts its value to a UInt32. If any of these conditions are true returns null: <paramref name="element"/> equals null, there is no child node with <paramref name="name"/>, the value of the attribute cannot be converted to a UInt32.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt32? GetAttributeValueAsUInt32(this XElement element, XName name)
+		{
+			return GetAttributeValue(element, name).ToUInt32();
+		}
+
+		/// <summary>
+		/// Finds the attribute that has the name equal to <paramref name="name"/> and returns its value as a UInt32. If any of the following conditions are true returns <paramref name="defaultValue"/>: <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child attribute cannot be converted to UInt32.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt32 GetAttributeValueAsUInt32OrDefault(this XElement element, XName name, UInt32 defaultValue)
+		{
+			return GetAttributeValue(element, name).ToUInt32OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Finds the attribute that has the name equal to <paramref name="name"/> and returns its value as a UInt32. If any of the following conditions are true returns default(UInt32): <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child attribute cannot be converted to UInt32.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt32 GetAttributeValueAsUInt32OrDefault(this XElement element, XName name)
+		{
+			return GetAttributeValue(element, name).ToUInt32OrDefault();
+		}
+
+
+		/// <summary>
+		/// Finds the attribute who's name equals <paramref name="name"/> and converts its value to a UInt64. If any of these conditions are true returns null: <paramref name="element"/> equals null, there is no child node with <paramref name="name"/>, the value of the attribute cannot be converted to a UInt64.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt64? GetAttributeValueAsUInt64(this XElement element, XName name)
+		{
+			return GetAttributeValue(element, name).ToUInt64();
+		}
+
+		/// <summary>
+		/// Finds the attribute that has the name equal to <paramref name="name"/> and returns its value as a UInt64. If any of the following conditions are true returns <paramref name="defaultValue"/>: <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child attribute cannot be converted to UInt64.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static UInt64 GetAttributeValueAsUInt64OrDefault(this XElement element, XName name, UInt64 defaultValue)
+		{
+			return GetAttributeValue(element, name).ToUInt64OrDefault(defaultValue);
+		}
+
+		/// <summary>
+		/// Finds the attribute that has the name equal to <paramref name="name"/> and returns its value as a UInt64. If any of the following conditions are true returns default(UInt64): <paramref name="element"/> is null, there are no children with name equal to <paramref name="name"/>, the value of the child attribute cannot be converted to UInt64.
+		/// </summary>
+		/// <param name="element"></param>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static UInt64 GetAttributeValueAsUInt64OrDefault(this XElement element, XName name)
+		{
+			return GetAttributeValue(element, name).ToUInt64OrDefault();
+		}
 		#endregion
 
 		#region WinRT Extensions

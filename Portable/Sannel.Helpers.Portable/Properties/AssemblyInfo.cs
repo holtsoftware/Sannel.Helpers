@@ -13,4 +13,4 @@ using System;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]

@@ -24,6 +24,9 @@ using System.Linq;
 using System.Text;
 using Sannel.Helpers;
 using System.IO;
+#if NET_4_5 || NET_4_5_1
+using System.Threading.Tasks;
+#endif
 
 namespace Sannel.TestHelpers.Tests
 {
@@ -47,7 +50,7 @@ namespace Sannel.TestHelpers.Tests
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void ThrowsWithNullTest()
 		{
-			AssertHelpers.ThrowsException<FileNotFoundException>(null);
+			AssertHelpers.ThrowsException<FileNotFoundException>((Action)null);
 		}
 	}
 }

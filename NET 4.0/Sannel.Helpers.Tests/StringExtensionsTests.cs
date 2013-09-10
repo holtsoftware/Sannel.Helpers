@@ -17,7 +17,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-#if NETFX_CORE
+#if NETFX_CORE || WP8
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -440,6 +440,171 @@ namespace Sannel.Helpers.Tests
 
 			expected = -600;
 			actual = StringExtensions.ToDecimalOrDefault(null, expected);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ToUInt16Test()
+		{
+			UInt16? expected = 6;
+			UInt16? actual = StringExtensions.ToUInt16(null);
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt16("");
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt16("abc");
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt16(expected.ToString());
+			Assert.AreEqual(expected, actual);
+
+			expected = (UInt16)random.Next(0, UInt16.MaxValue);
+			actual = StringExtensions.ToUInt16(expected.ToString());
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ToUInt16OrDefaultTest()
+		{
+			UInt16 expected = 8;
+			UInt16 actual = StringExtensions.ToUInt16OrDefault(null, expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 9;
+			actual = StringExtensions.ToUInt16OrDefault("", expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 10;
+			actual = StringExtensions.ToUInt16OrDefault("abc", expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 60;
+			actual = StringExtensions.ToUInt16OrDefault(expected.ToString(), 100);
+			Assert.AreEqual(expected, actual);
+
+			expected = default(UInt16);
+			actual = StringExtensions.ToUInt16OrDefault(null);
+			Assert.AreEqual(expected, actual);
+
+			actual = StringExtensions.ToUInt16OrDefault("");
+			Assert.AreEqual(expected, actual);
+
+			actual = StringExtensions.ToUInt16OrDefault("abc");
+			Assert.AreEqual(expected, actual);
+
+			expected = 15;
+			actual = StringExtensions.ToUInt16OrDefault(expected.ToString());
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ToUInt32Test()
+		{
+			UInt32? expected = 6;
+			UInt32? actual = StringExtensions.ToUInt32(null);
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt32("");
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt32("abc");
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt32(expected.ToString());
+			Assert.AreEqual(expected, actual);
+
+			expected = (UInt32)random.Next(0, 500);
+			actual = StringExtensions.ToUInt32(expected.ToString());
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ToUInt32OrDefaultTest()
+		{
+			UInt32 expected = 8;
+			UInt32 actual = StringExtensions.ToUInt32OrDefault(null, expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 9;
+			actual = StringExtensions.ToUInt32OrDefault("", expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 10;
+			actual = StringExtensions.ToUInt32OrDefault("abc", expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 60;
+			actual = StringExtensions.ToUInt32OrDefault(expected.ToString(), 100);
+			Assert.AreEqual(expected, actual);
+
+			expected = default(UInt32);
+			actual = StringExtensions.ToUInt32OrDefault(null);
+			Assert.AreEqual(expected, actual);
+
+			actual = StringExtensions.ToUInt32OrDefault("");
+			Assert.AreEqual(expected, actual);
+
+			actual = StringExtensions.ToUInt32OrDefault("abc");
+			Assert.AreEqual(expected, actual);
+
+			expected = 15;
+			actual = StringExtensions.ToUInt32OrDefault(expected.ToString());
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ToUInt64Test()
+		{
+			UInt64? expected = 6;
+			UInt64? actual = StringExtensions.ToUInt64(null);
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt64("");
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt64("abc");
+			Assert.IsNull(actual);
+
+			actual = StringExtensions.ToUInt64(expected.ToString());
+			Assert.AreEqual(expected, actual);
+
+			expected = (UInt64)random.Next(0, 500);
+			actual = StringExtensions.ToUInt64(expected.ToString());
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ToUInt64OrDefaultTest()
+		{
+			UInt64 expected = 8;
+			UInt64 actual = StringExtensions.ToUInt64OrDefault(null, expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 9;
+			actual = StringExtensions.ToUInt64OrDefault("", expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 10;
+			actual = StringExtensions.ToUInt64OrDefault("abc", expected);
+			Assert.AreEqual(expected, actual);
+
+			expected = 60;
+			actual = StringExtensions.ToUInt64OrDefault(expected.ToString(), 100);
+			Assert.AreEqual(expected, actual);
+
+			expected = default(UInt64);
+			actual = StringExtensions.ToUInt64OrDefault(null);
+			Assert.AreEqual(expected, actual);
+
+			actual = StringExtensions.ToUInt64OrDefault("");
+			Assert.AreEqual(expected, actual);
+
+			actual = StringExtensions.ToUInt64OrDefault("abc");
+			Assert.AreEqual(expected, actual);
+
+			expected = 15;
+			actual = StringExtensions.ToUInt64OrDefault(expected.ToString());
 			Assert.AreEqual(expected, actual);
 		}
 

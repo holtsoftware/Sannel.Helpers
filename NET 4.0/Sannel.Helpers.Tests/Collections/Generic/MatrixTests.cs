@@ -16,7 +16,7 @@ limitations under the License.
 using System;
 using Sannel.Collections.Generic;
 
-#if NETFX_CORE
+#if NETFX_CORE || WP8
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
