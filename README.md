@@ -1,4 +1,1 @@
-Sannel.Helpers
-==============
-
-A bunch of Classes and Extensions. 
+This library is Documented in the wiki https://github.com/holtsoftware/Sannel.Helpers/wiki
