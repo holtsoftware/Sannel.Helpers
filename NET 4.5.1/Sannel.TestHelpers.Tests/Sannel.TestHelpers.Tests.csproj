@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68ADEB49-E7AD-499B-833A-F095EC45C31B}</ProjectGuid>
+    <ProjectGuid>{D754AACA-A129-4F97-B4D3-A31A6B27F620}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sannel.TestHelpers.Tests</RootNamespace>
@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sannel.TestHelpers\Sannel.TestHelpers.csproj">
-      <Project>{60437e0e-b249-43bf-9a70-d2bfc12d438b}</Project>
+      <Project>{583caab1-228d-4073-9419-537ebee82a35}</Project>
       <Name>Sannel.TestHelpers</Name>
     </ProjectReference>
   </ItemGroup>

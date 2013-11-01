@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60437E0E-B249-43BF-9A70-D2BFC12D438B}</ProjectGuid>
+    <ProjectGuid>{583CAAB1-228D-4073-9419-537EBEE82A35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sannel.Helpers</RootNamespace>

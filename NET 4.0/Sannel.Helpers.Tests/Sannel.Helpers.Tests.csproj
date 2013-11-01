@@ -69,11 +69,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Sannel.Helpers\Sannel.Helpers.csproj">
       <Project>{151fb2d8-717d-4bdd-a229-ae55d8d81a22}</Project>
-      <Name>Sannel.Helpers %28NET 4\Sannel.Helpers%29</Name>
+      <Name>Sannel.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sannel.TestHelpers\Sannel.TestHelpers.csproj">
       <Project>{e4ecbe20-b078-459f-9e9b-e5966736e60c}</Project>
-      <Name>Sannel.TestHelpers %28NET 4\Sannel.TestHelpers%29</Name>
+      <Name>Sannel.TestHelpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
