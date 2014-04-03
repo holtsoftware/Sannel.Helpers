@@ -10,7 +10,7 @@
 	<Target Name="Build">
 		<RemoveDir Directories="$(BuildDir)" />
 		<MakeDir Directories="$(BuildDir)" />
-		<CallTarget Targets="BuildNET4;BuildNET4_5;BuildNET4_5_1;Build_Web_Optimization;BuildPortable;BuildWinRT;BuildWP7;BuildWP8;CreateZip" />
+		<CallTarget Targets="BuildNET4;BuildNET4_5;BuildNET4_5_1;Build_Web_Optimization;BuildPortable;BuildWinRT;BuildWP8;CreateZip" />
 	</Target>
 
 	<Target Name="CreateZip">
@@ -29,7 +29,7 @@
 		<PropertyGroup>
 			<Dir>NET 4.0</Dir>
 			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
-			<MSTest>$(VS110COMNTOOLS)..\IDE\mstest.exe</MSTest>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
 		</PropertyGroup>
 
 		<RemoveDir Directories="$(OutputDir)" />
@@ -47,7 +47,7 @@
 		<PropertyGroup>
 			<Dir>NET 4.5</Dir>
 			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
-			<MSTest>$(VS110COMNTOOLS)..\IDE\mstest.exe</MSTest>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
 		</PropertyGroup>
 
 		<RemoveDir Directories="$(OutputDir)" />
@@ -85,7 +85,7 @@
 		<PropertyGroup>
 			<Dir>NET 4.5</Dir>
 			<OutputDir>$(BuildDir)\Sannel.Helpers.Web.Optimization</OutputDir>
-			<MSTest>$(VS110COMNTOOLS)..\IDE\mstest.exe</MSTest>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
 		</PropertyGroup>
 
 		<RemoveDir Directories="$(OutputDir)" />
@@ -103,7 +103,7 @@
 		<PropertyGroup>
 			<Dir>Portable</Dir>
 			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
-			<MSTest>$(VS110COMNTOOLS)..\IDE\mstest.exe</MSTest>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
 		</PropertyGroup>
 
 		<RemoveDir Directories="$(OutputDir)" />
@@ -131,7 +131,7 @@
 		<MSBuild Projects="$(Dir)\Sannel.Helpers.WinRT\Sannel.Helpers.WinRT.csproj;" Properties="Configuration=$(Configuration);DefineConstants=NETFX_CORE;OutputPath=..\..\$(OutputDir);DocumentationFile=..\..\$(OutputDir)\Sannel.Helpers.WinRT.xml" ToolsVersion="4.0"  />		
 	</Target>
 
-	<Target Name="BuildWP7">
+	<!--Target Name="BuildWP7">
 		<PropertyGroup>
 			<Dir>WP7</Dir>
 			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
@@ -142,7 +142,7 @@
 		<MakeDir Directories="$(OutputDir)" />
 
 		<MSBuild Projects="$(Dir)\Sannel.Helpers.WP7\Sannel.Helpers.WP7.csproj;" Properties="Configuration=$(Configuration);DefineConstants=SILVERLIGHT,WINDOWS_PHONE;OutputPath=..\..\$(OutputDir);DocumentationFile=..\..\$(OutputDir)\Sannel.Helpers.WP7.xml" ToolsVersion="4.0"  />
-	</Target>
+	</Target-->
 
 	<Target Name="BuildWP8">
 		<PropertyGroup>
@@ -154,6 +154,19 @@
 
 		<MakeDir Directories="$(OutputDir)" />
 
-		<MSBuild Projects="$(Dir)\Sannel.Helpers.WP8\Sannel.Helpers.WP8.csproj;" Properties="Configuration=$(Configuration);DefineConstants=SILVERLIGHT,WINDOWS_PHONE;OutputPath=..\..\$(OutputDir);DocumentationFile=..\..\$(OutputDir)\Sannel.Helpers.WP8.xml" ToolsVersion="4.0"  />
+		<MSBuild Projects="$(Dir)\Sannel.Helpers.WP8\Sannel.Helpers.WP8.csproj;" Properties="Configuration=$(Configuration);DefineConstants=SILVERLIGHT,WINDOWS_PHONE,WP8;OutputPath=..\..\$(OutputDir);DocumentationFile=..\..\$(OutputDir)\Sannel.Helpers.WP8.xml" ToolsVersion="4.0"  />
+	</Target>
+	
+	<Target Name="BuildWP8_1_Silverlight">
+		<PropertyGroup>
+			<Dir>WP8_1_Silverlight</Dir>
+			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
+		</PropertyGroup>
+
+		<RemoveDir Directories="$(OutputDir)" />
+
+		<MakeDir Directories="$(OutputDir)" />
+
+		<MSBuild Projects="$(Dir)\Sannel.Helpers.WP8_1_Silverlight\Sannel.Helpers.WP8_1_Silverlight.csproj;" Properties="Configuration=$(Configuration);DefineConstants=SILVERLIGHT,WINDOWS_PHONE,WP8;OutputPath=..\..\$(OutputDir);DocumentationFile=..\..\$(OutputDir)\Sannel.Helpers.WP8_1_Silverlight.xml" ToolsVersion="12"  />
 	</Target>
 </Project>

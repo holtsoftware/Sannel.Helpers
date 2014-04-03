@@ -26,6 +26,6 @@ limitations under the License.
 using System.Reflection;
 
 [assembly: AssemblyCompany("Sannel Software, LLC")]
-[assembly: AssemblyCopyright("Copyright © Sannel Software, L.L.C. 2013")]
-[assembly: AssemblyVersion("1.4.0.0")]
-[assembly: AssemblyFileVersion("1.4.0.0")]
+[assembly: AssemblyCopyright("Copyright © Sannel Software, L.L.C. 2014")]
+[assembly: AssemblyVersion("1.4.1.0")]
+[assembly: AssemblyFileVersion("1.4.1.0")]
