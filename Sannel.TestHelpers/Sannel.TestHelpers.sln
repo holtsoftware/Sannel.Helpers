@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.TestHelpers", "NET 4\Sannel.TestHelpers\Sannel.TestHelpers.csproj", "{E4ECBE20-B078-459F-9E9B-E5966736E60C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.TestHelpers.Tests", "NET 4\Sannel.TestHelpers.Tests\Sannel.TestHelpers.Tests.csproj", "{3B308FB5-00A1-4702-8C32-4FC998A68D62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET 4", "NET 4", "{4A92FA87-5882-499B-9A60-B0B4ACB950CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4ECBE20-B078-459F-9E9B-E5966736E60C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4ECBE20-B078-459F-9E9B-E5966736E60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4ECBE20-B078-459F-9E9B-E5966736E60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4ECBE20-B078-459F-9E9B-E5966736E60C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B308FB5-00A1-4702-8C32-4FC998A68D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B308FB5-00A1-4702-8C32-4FC998A68D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B308FB5-00A1-4702-8C32-4FC998A68D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B308FB5-00A1-4702-8C32-4FC998A68D62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4ECBE20-B078-459F-9E9B-E5966736E60C} = {4A92FA87-5882-499B-9A60-B0B4ACB950CA}
+		{3B308FB5-00A1-4702-8C32-4FC998A68D62} = {4A92FA87-5882-499B-9A60-B0B4ACB950CA}
+	EndGlobalSection
+EndGlobal

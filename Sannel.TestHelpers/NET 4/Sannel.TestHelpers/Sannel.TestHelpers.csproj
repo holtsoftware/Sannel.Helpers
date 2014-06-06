@@ -53,20 +53,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Sannel.Helpers\Properties\AssemblyVersion.cs">
-      <Link>Properties\AssemblyVersion.cs</Link>
-    </Compile>
+    <Compile Include="Properties\AssemblyVersion.cs" />
     <Compile Include="AssertHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Sannel.TestHelpers.snk" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\License.txt">
+    <CodeAnalysisDictionary Include="..\..\..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\..\License.txt">
       <Link>License.txt</Link>
     </EmbeddedResource>
   </ItemGroup>
