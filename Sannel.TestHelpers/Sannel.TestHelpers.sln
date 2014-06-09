@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.TestHelpers.Tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET 4", "NET 4", "{4A92FA87-5882-499B-9A60-B0B4ACB950CA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEA15CF2-4F73-49E9-97CF-A837424BCC18}"
+	ProjectSection(SolutionItems) = preProject
+		Sannel.Helpers.Build.msbuildproj = Sannel.Helpers.Build.msbuildproj
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

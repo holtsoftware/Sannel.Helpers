@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<BuildDir>Build</BuildDir>
+		<Configuration>Release</Configuration>
+	</PropertyGroup>
+
+	<Target Name="Build">
+		<RemoveDir Directories="$(BuildDir)" />
+		<MakeDir Directories="$(BuildDir)" />
+		<CallTarget Targets="BuildNET4" />
+	</Target>
+	
+	<Target Name="BuildNET4">
+		<PropertyGroup>
+			<Dir>NET 4</Dir>
+			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
+		</PropertyGroup>
+
+		<RemoveDir Directories="$(OutputDir)" />
+
+		<MakeDir Directories="$(OutputDir)" />
+		
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj;$(Dir)\Sannel.TestHelpers.Tests\Sannel.TestHelpers.Tests.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir);" />
+
+		<Exec Command="&quot;$(MSTest)&quot; /testContainer:&quot;$(OutputDir)\Sannel.TestHelpers.Tests.dll&quot;" />
+	</Target>
+
+</Project>
