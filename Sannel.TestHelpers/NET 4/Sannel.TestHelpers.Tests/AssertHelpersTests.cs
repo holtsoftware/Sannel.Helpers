@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-#if NETFX_CORE
+#if NETFX_CORE || WP8 || WP_8_1
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -37,6 +37,7 @@ namespace Sannel.TestHelpers.Tests
 		public void AssertIsMessageTest()
 		{
 			var except = new Exception("Test String");
+			
 			except.AssertIsMessage("Test String");
 		}
 
@@ -47,10 +48,19 @@ namespace Sannel.TestHelpers.Tests
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void ThrowsWithNullTest()
 		{
-			AssertHelpers.ThrowsException<FileNotFoundException>((Action)null);
+			bool exceptionCalled = false;
+			try
+			{
+				AssertHelpers.ThrowsException<FileNotFoundException>((Action)null);
+			}
+			catch(ArgumentNullException)
+			{
+				exceptionCalled = true;
+			}
+
+			Assert.IsTrue(exceptionCalled);
 		}
 	}
 }

@@ -13,8 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-#if NETFX_CORE || WP8
+#if NETFX_CORE || WINDOWS_PHONE
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+#elif Android
+using NUnit.Framework;
 #else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 #endif
@@ -23,15 +25,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-#if NET_4_5 || NET_4_5_1
-using System.Threading.Tasks;
-#endif
-
-#if NETFX_CORE
-namespace Sannel.Helpers.WinRT.Tests
-#else
 namespace Sannel.Helpers
-#endif
 {
 
 	/// <summary>
@@ -64,6 +58,12 @@ namespace Sannel.Helpers
 		public static T ThrowsException<T>(Action code, String message)
 			where T : Exception
 		{
+#if WP8 || WP_8_1
+			return Assert.ThrowsException<T>(code, message);
+#elif Android
+			TestDelegate d = (TestDelegate)code;
+			return Assert.Throws<T>(d).AssertIsMessage(message);
+#else
 			if (code == null)
 			{
 				throw new ArgumentNullException("code");
@@ -82,6 +82,7 @@ namespace Sannel.Helpers
 			Assert.IsInstanceOfType(thrownException, typeof(T), message ?? "The exception was not of the correct type got {0} expected {1}", thrownException.GetType(), typeof(T));
 
 			return (T)thrownException;
+#endif
 		}
 
 		/// <summary>
@@ -93,7 +94,14 @@ namespace Sannel.Helpers
 		public static T ThrowsException<T>(Action code)
 			where T : Exception
 		{
+#if WP8 || WP_8_1
+			return Assert.ThrowsException<T>(code);
+#elif Android
+			TestDelegate d = (TestDelegate)code;
+			return Assert.Throws<T>(d);
+#else
 			return ThrowsException<T>(code, null);
+#endif
 		}
 	}
 }

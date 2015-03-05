@@ -61,12 +61,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sannel.TestHelpers\Sannel.TestHelpers.csproj">
-      <Project>{583caab1-228d-4073-9419-537ebee82a35}</Project>
-      <Name>Sannel.TestHelpers</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

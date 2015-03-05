@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
 		<BuildDir>Build</BuildDir>
 		<Configuration>Release</Configuration>
@@ -9,9 +9,9 @@
 	<Target Name="Build">
 		<RemoveDir Directories="$(BuildDir)" />
 		<MakeDir Directories="$(BuildDir)" />
-		<CallTarget Targets="BuildNET4" />
+		<CallTarget Targets="BuildNET4;WP8;WP81S;WP81RT" />
 	</Target>
-	
+
 	<Target Name="BuildNET4">
 		<PropertyGroup>
 			<Dir>NET 4</Dir>
@@ -22,10 +22,79 @@
 		<RemoveDir Directories="$(OutputDir)" />
 
 		<MakeDir Directories="$(OutputDir)" />
-		
+
 		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj;$(Dir)\Sannel.TestHelpers.Tests\Sannel.TestHelpers.Tests.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir);" />
 
 		<Exec Command="&quot;$(MSTest)&quot; /testContainer:&quot;$(OutputDir)\Sannel.TestHelpers.Tests.dll&quot;" />
+	</Target>
+
+	<Target Name="WP8">
+		<PropertyGroup>
+			<Dir>WP 8</Dir>
+			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
+		</PropertyGroup>
+
+		<RemoveDir Directories="$(OutputDir)" />
+
+		<MakeDir Directories="$(OutputDir)" />
+		<MakeDir Directories="$(OutputDir)\ARM;$(OutputDir)\x86" />
+
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)\ARM;Platform=ARM;AssemblyName=Sannel.TestHelpers" />
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)\x86;Platform=x86;AssemblyName=Sannel.TestHelpers" />
+
+		<ItemGroup>
+			<targets Include="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.targets"/>
+		</ItemGroup>
+
+		<Copy SourceFiles="@(targets)" DestinationFolder="$(OutputDir)" />
+
+	</Target>
+
+	<Target Name="WP81S">
+		<PropertyGroup>
+			<Dir>WP 8.1 Silverlight</Dir>
+			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
+		</PropertyGroup>
+
+		<RemoveDir Directories="$(OutputDir)" />
+
+		<MakeDir Directories="$(OutputDir)" />
+		<MakeDir Directories="$(OutputDir)\ARM;$(OutputDir)\x86" />
+
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)\ARM;Platform=ARM;AssemblyName=Sannel.TestHelpers" />
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)\x86;Platform=x86;AssemblyName=Sannel.TestHelpers" />
+
+		<ItemGroup>
+			<targets Include="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.targets"/>
+		</ItemGroup>
+
+		<Copy SourceFiles="@(targets)" DestinationFolder="$(OutputDir)" />
+
+	</Target>
+
+	<Target Name="WP81RT">
+		<PropertyGroup>
+			<Dir>WP 8.1 WinPRT</Dir>
+			<OutputDir>$(BuildDir)\$(Dir)</OutputDir>
+			<MSTest>$(VS120COMNTOOLS)..\IDE\mstest.exe</MSTest>
+		</PropertyGroup>
+
+		<RemoveDir Directories="$(OutputDir)" />
+
+		<MakeDir Directories="$(OutputDir)" />
+		<MakeDir Directories="$(OutputDir)\ARM;$(OutputDir)\x86" />
+
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)\ARM;Platform=ARM;AssemblyName=Sannel.TestHelpers" />
+		<MSBuild Projects="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.csproj" Properties="Configuration=$(Configuration);OutputPath=..\..\$(OutputDir)\x86;Platform=x86;AssemblyName=Sannel.TestHelpers" />
+
+		<ItemGroup>
+			<targets Include="$(Dir)\Sannel.TestHelpers\Sannel.TestHelpers.targets"/>
+		</ItemGroup>
+
+		<Copy SourceFiles="@(targets)" DestinationFolder="$(OutputDir)" />
+
 	</Target>
 
 </Project>

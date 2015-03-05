@@ -88,12 +88,6 @@
     <Compile Include="..\..\NET 4.0\Sannel.Helpers.Tests\StringExtensionsTests.cs">
       <Link>StringExtensionsTests.cs</Link>
     </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.Helpers.Tests\XDocumentExtensionTests.cs">
-      <Link>XDocumentExtensionTests.cs</Link>
-    </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.Helpers.Tests\XElementExtensionTests.cs">
-      <Link>XElementExtensionTests.cs</Link>
-    </Compile>
     <Compile Include="..\..\NET 4.0\Sannel.TestHelpers\AssertHelpers.cs">
       <Link>AssertHelpers.cs</Link>
     </Compile>

@@ -53,7 +53,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE:WP8</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -85,15 +85,6 @@
     <Compile Include="..\..\NET 4.0\Sannel.Helpers.Tests\StringExtensionsTests.cs">
       <Link>StringExtensionsTests.cs</Link>
     </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.Helpers.Tests\XDocumentExtensionTests.cs">
-      <Link>XDocumentExtensionTests.cs</Link>
-    </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.Helpers.Tests\XElementExtensionTests.cs">
-      <Link>XElementExtensionTests.cs</Link>
-    </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.TestHelpers\AssertHelpers.cs">
-      <Link>AssertHelpers.cs</Link>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -119,6 +110,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -150,13 +142,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Sannel.Helpers.WP8\Sannel.Helpers.WP8.csproj">
-      <Project>{C0EDF674-26BD-4F5E-AC8F-AE60107BAAA0}</Project>
+      <Project>{c0edf674-26bd-4f5e-ac8f-ae60107baaa0}</Project>
       <Name>Sannel.Helpers.WP8</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <Reference Include="Sannel.TestHelpers">
+      <HintPath>..\..\packages\Sannel.TestHelpers.1.1.1.8\lib\wp8\x86\Sannel.TestHelpers.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

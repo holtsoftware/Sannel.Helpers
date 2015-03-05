@@ -87,10 +87,6 @@
       <Project>{59e52c5d-5d4f-4c66-b9ec-185df1d5ad06}</Project>
       <Name>Sannel.Helpers.Web.Optimization</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sannel.TestHelpers\Sannel.TestHelpers.csproj">
-      <Project>{60437e0e-b249-43bf-9a70-d2bfc12d438b}</Project>
-      <Name>Sannel.TestHelpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

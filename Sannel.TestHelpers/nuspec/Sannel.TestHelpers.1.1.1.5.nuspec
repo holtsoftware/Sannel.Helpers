@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Sannel.TestHelpers</id>
+        <version>1.1.1.5</version>
+        <authors>Sannel Software,L.L.C.</authors>
+        <licenseUrl>https://github.com/holtsoftware/Sannel.Helpers/blob/master/License.txt</licenseUrl>
+        <projectUrl>https://github.com/holtsoftware/Sannel.Helpers</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>ASSERTHELPERS
+
+AssertIsMessage Check to make sure the Message from the exception is the message you provide.
+
+ThrowsException Makes sure the provided exception has been thrown and that it has the message if provided</description>
+    </metadata>
+    <files>
+        <file src="..\Build\NET 4\Sannel.TestHelpers.dll" target="lib\net4\Sannel.TestHelpers.dll" />
+        <file src="..\Build\WP 8\ARM\Sannel.TestHelpers.dll" target="lib\wp8\ARM\Sannel.TestHelpers.dll" />
+        <file src="..\Build\WP 8\x86\Sannel.TestHelpers.dll" target="lib\wp8\x86\Sannel.TestHelpers.dll" />
+        <file src="..\Build\WP 8\Sannel.TestHelpers.targets" target="lib\wp8\Sannel.TestHelpers.targets" />
+    </files>
+</package>

@@ -82,12 +82,6 @@
     <Compile Include="..\..\NET 4.0\Sannel.Helpers\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.Helpers\XDocumentExtensions.cs">
-      <Link>XDocumentExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\NET 4.0\Sannel.Helpers\XElementExtensions.cs">
-      <Link>XElementExtensions.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
