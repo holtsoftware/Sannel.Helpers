@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.Helpers.Tests", "NET
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PCL", "PCL", "{2F68EFAE-3D22-47B9-8C3A-27032D36B56A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.Helpers.PCL", "PLC\Sannel.Helpers.PCL\Sannel.Helpers.PCL.csproj", "{ADCD85B3-4126-45DE-ACE9-5E397B81EF85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.Helpers.PCL", "PCL\Sannel.Helpers.PCL\Sannel.Helpers.PCL.csproj", "{ADCD85B3-4126-45DE-ACE9-5E397B81EF85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.Helpers.Tests.PCL", "PLC\Sannel.Helpers.Tests.PCL\Sannel.Helpers.Tests.PCL.csproj", "{8BF1255F-30BE-46D0-9E47-311387B35A86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.Helpers.Tests.PCL", "PCL\Sannel.Helpers.Tests.PCL\Sannel.Helpers.Tests.PCL.csproj", "{8BF1255F-30BE-46D0-9E47-311387B35A86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sannel.Helpers.4_5", "NET 4_5\Sannel.Helpers.4_5\Sannel.Helpers.4_5.csproj", "{8DB43BBA-83F4-410F-9689-CC9F329C1012}"
 EndProject
