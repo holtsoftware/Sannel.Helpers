@@ -13,11 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-#if NET_4_5 || NET_4_5_1
+#if NET_4_5 || NET_4_5_1 || PORTABLE
 using System.Threading.Tasks;
-#else
-using System.Collections.ObjectModel;
 #endif
+using System.Collections.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -131,7 +130,7 @@ namespace Sannel
 					var match = ArgumentNameRegex.Match(a);
 					if (match.Success)
 					{
-						var name = match.Groups["name"].Value.ToLower(CultureInfo.InvariantCulture);
+						var name = match.Groups["name"].Value.ToLowerInvariant();
 						if (a.Length > match.Length)
 						{
 							var value = a.Substring(match.Length);
@@ -159,7 +158,7 @@ namespace Sannel
 			}
 		}
 
-#if NET_4_5 || NET_4_5_1
+#if NET_4_5 || NET_4_5_1 || PORTABLE
 		/// <summary>
 		/// Parses the provided <paramref name="args"/> array into Arguments, Values and NonArgumentValues
 		/// </summary>
@@ -177,7 +176,10 @@ namespace Sannel
 			RegexOptions.IgnoreCase
 			| RegexOptions.CultureInvariant
 			| RegexOptions.IgnorePatternWhitespace
-			| RegexOptions.Compiled);
+#if !PORTABLE
+			| RegexOptions.Compiled
+#endif
+			);
 
 	}
 }

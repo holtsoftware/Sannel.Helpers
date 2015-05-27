@@ -27,7 +27,7 @@ namespace Sannel.Helpers
 	public static class AssemblyExtensions
 	{
 		
-#if NETFX_CORE
+#if NETFX_CORE || PORTABLE
 		/// <summary>
 		/// Gets the first instance of Attribute who's type is <typeparamref name="T"/> and returns it.
 		/// if assembly == null returns null
@@ -91,7 +91,7 @@ namespace Sannel.Helpers
 		}
 #endif
 
-#if !NETFX_CORE
+#if !NETFX_CORE && !PORTABLE
 		/// <summary>
 		/// Gets the first instance of Attribute who's type is <typeparamref name="T"/> and returns it.
 		/// if assembly == null returns null
