@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>Sannel.Helpers</id>
+        <id>Sannel.Helpers.PCL</id>
         <version>2.0.0</version>
         <authors>Adam Holt</authors>
         <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
@@ -28,12 +28,10 @@ NotifyPropertyChangedBase Based on Microsofts NotifyProperyChangedBase provided 
 
 Matrix a wrapper around .NET's multi-dimensional array</description>
         <summary>Contains Extension helpers for String, Assembly, and Random contains Classes for NotifyPropertyChangeBase and Matrix</summary>
-        <releaseNotes>Removed XElement and XDocument extensions. Consolidated projet to .NET 4.0 and .NET 4.5 and PCL(Seperate package).</releaseNotes>
+        <releaseNotes>PCL release.</releaseNotes>
     </metadata>
     <files>
-        <file src="..\Sannel.Helpers\NET 4\Sannel.Helpers\bin\Release\Sannel.Helpers.dll" target="lib\net40\Sannel.Helpers.dll" />
-        <file src="..\Sannel.Helpers\NET 4\Sannel.Helpers\bin\Release\Sannel.Helpers.pdb" target="lib\net40\Sannel.Helpers.pdb" />
-        <file src="..\Sannel.Helpers\NET 4_5\Sannel.Helpers.4_5\bin\Release\Sannel.Helpers.dll" target="lib\net45\Sannel.Helpers.dll" />
-        <file src="..\Sannel.Helpers\NET 4_5\Sannel.Helpers.4_5\bin\Release\Sannel.Helpers.pdb" target="lib\net45\Sannel.Helpers.pdb" />
+        <file src="..\Sannel.Helpers\PCL\Sannel.Helpers.PCL\bin\Release\Sannel.Helpers.PLC.dll" target="lib\portable-net45+wp8+win8\Sannel.Helpers.PLC.dll" />
+        <file src="..\Sannel.Helpers\PCL\Sannel.Helpers.PCL\bin\Release\Sannel.Helpers.PLC.pdb" target="lib\portable-net45+wp8+win8\Sannel.Helpers.PLC.pdb" />
     </files>
 </package>
