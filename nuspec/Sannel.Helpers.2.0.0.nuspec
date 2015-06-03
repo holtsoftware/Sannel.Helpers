@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Sannel.Helpers</id>
+        <version>2.0.0</version>
+        <authors>Adam Holt</authors>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+        <projectUrl>https://github.com/holtsoftware/Sannel.Helpers</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>EXTENSION METHODS
+
+STRING
+Extensions to convert to numbers
+Extensions to convert to DateTime
+Extensions to convert to Guid
+Extensions to Remove all except alpha numeric characters
+
+ASSEMBLY
+Extensions to get Assembly Attributes
+Extensions to get the Title of the Assembly
+Extensions to get the Version of the Assembly
+
+RANDOM
+Extensions to get a Random String
+
+CLASSES
+NotifyPropertyChangedBase Based on Microsofts NotifyProperyChangedBase provided in WinRT projects. Implements INotifyPropertyChanged allowing developers to just call SetProperty(ref v, value, "PropertyName") when one of the classes properties change.
+
+Matrix a wrapper around .NET's multi-dimensional array</description>
+        <summary>Contains Extension helpers for String, Assembly, and Random contains Classes for NotifyPropertyChangeBase and Matrix</summary>
+        <releaseNotes>Removed XElement and XDocument extensions. Consolidated projet to .NET 4.0 and .NET 4.5 and PCL(Seperate package).</releaseNotes>
+    </metadata>
+    <files>
+        <file src="..\Sannel.Helpers\NET 4\Sannel.Helpers\bin\Release\Sannel.Helpers.dll" target="lib\net40\Sannel.Helpers.dll" />
+        <file src="..\Sannel.Helpers\NET 4\Sannel.Helpers\bin\Release\Sannel.Helpers.pdb" target="lib\net40\Sannel.Helpers.pdb" />
+        <file src="..\Sannel.Helpers\NET 4_5\Sannel.Helpers.4_5\bin\Release\Sannel.Helpers.dll" target="lib\net45\Sannel.Helpers.dll" />
+        <file src="..\Sannel.Helpers\NET 4_5\Sannel.Helpers.4_5\bin\Release\Sannel.Helpers.pdb" target="lib\net45\Sannel.Helpers.pdb" />
+    </files>
+</package>
